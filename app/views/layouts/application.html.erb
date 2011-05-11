@@ -21,7 +21,7 @@
 			<%= link_to "Genres", genres_path %>
 		</div>	  
 		<div id="search">
-		  	<% form_tag search_index_path do %>
+		  	<%= form_tag search_index_path do %>
 				Films
 				<%= text_field_tag :search_for %>
 				<%= submit_tag 'Go'%>

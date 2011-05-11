@@ -1,3 +1,3 @@
 class Genre < ActiveRecord::Base
-  has_many :films
+  has_many :films, :dependent => :destroy
 end
