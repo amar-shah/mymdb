@@ -27,4 +27,41 @@ describe Film do
     end
   end
   
+  describe 'ratings' do
+    
+    it 'should be valid when rating is zero to five' do
+      (0..5).each do |rating|
+        film = Factory.build(:film,:rating=>rating)
+        film.valid?.should be_true
+      end
+    end
+    
+    it 'should not be valid when rating is minus one' do
+      film = Factory.build(:film,:rating=>-1)
+      film.valid?.should be_false
+      film.errors_on(:rating).should == ["must be greater than -1"] 
+    end
+    
+    it 'should not be valid when rating is six' do
+      film = Factory.build(:film,:rating=>6)
+      film.valid?.should be_false
+      film.errors_on(:rating).should == ["must be less than 6"] 
+    end
+  
+  end
+  
 end
+
+# == Schema Information
+#
+# Table name: films
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  url         :string(255)
+#  description :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  rating      :integer
+#
+

@@ -62,7 +62,7 @@ describe FilmsController do
   end
 
   it "destroy action should destroy model and redirect to index action" do
-    film = Film.create(:name=>"Film 1",:url=>"http://www.some.com",:description=>"descrption")
+    film = Film.create(:name=>"Film 1",:url=>"http://www.some.com",:description=>"descrption",:rating=>3)
     lambda do
       delete :destroy, :id => film.id
       response.should redirect_to(films_url)
