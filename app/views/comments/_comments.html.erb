@@ -1,0 +1,7 @@
+<div class="comments">
+	<%= comment.text %>
+	<div class="user-comment">
+		<%= comment.user.email %>&nbsp
+		<%= link_to "X", film_comment_path(comment.film,comment) ,:method => :delete %>
+	</div>
+</div>
