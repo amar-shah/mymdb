@@ -4,6 +4,8 @@ class Film < ActiveRecord::Base
   validates_numericality_of :rating, :greater_than => -1, :less_than => 6
   belongs_to :genre
   
+  has_many :comments, :dependent=> :destroy
+  
   private
   def clean_url
     self.url.gsub!("http://","") if self.url
