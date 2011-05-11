@@ -5,6 +5,8 @@
     <th>Name</th>
     <th>Url</th>
     <th>Description</th>
+	<th>Rating</th>
+	<th>Genre</th>
   </tr>
   <% for film in @films %>
     <tr>
@@ -12,6 +14,7 @@
       <td><%= film.url %></td>
       <td><%= film.description %></td>
 	  <td><%= film.rating %></td>
+	  <td><%= film.genre.name %></td>
       <td><%= link_to "Show", film %></td>
       <td><%= link_to "Edit", edit_film_path(film) %></td>
       <td><%= link_to "Destroy", film, :confirm => 'Are you sure?', :method => :delete %></td>

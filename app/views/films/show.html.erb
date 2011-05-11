@@ -10,11 +10,15 @@
 </p>
 <p>
   <strong>Description:</strong>
-  <%= @film.description %>
+  <%= raw RedCloth.new(@film.description).to_html %>
 </p>
 <p>
   <strong>Rating:</strong>
   <%= @film.rating %>
+</p>
+<p>
+  <strong>Genre:</strong>
+  <%= @film.genre.name %>
 </p>
 
 <p>

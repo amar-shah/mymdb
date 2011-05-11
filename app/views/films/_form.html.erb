@@ -10,11 +10,15 @@
   </p>
   <p>
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </p>
   <p>
     <%= f.label :rating %><br />
     <%= f.text_field :rating %>
+  </p>
+  <p>
+    <%= f.label :genre %><br />
+    <%= f.select :genre_id , genre_options %>
   </p>
   <p><%= f.submit %></p>
 <% end %>

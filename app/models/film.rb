@@ -2,6 +2,7 @@ class Film < ActiveRecord::Base
   validates_presence_of :name, :url, :description
   before_validation :clean_url
   validates_numericality_of :rating, :greater_than => -1, :less_than => 6
+  belongs_to :genre
   
   private
   def clean_url

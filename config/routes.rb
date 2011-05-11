@@ -1,4 +1,6 @@
 Mymdb::Application.routes.draw do
+  resources :genres
+
   resources :films
   resources :search, :only =>:create
 
